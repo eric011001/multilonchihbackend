@@ -1,0 +1,152 @@
+{
+    "colores" : {
+        "lonas" : [
+            {
+                "title": "azul Marino",
+                "description": "duroplex 18 Oz azul marino c5239",
+                "code": "31LD0169",
+                "img": "/public/images/colores/azulMarino.png"
+            },
+            {
+                "title": "Azul Pep",
+                "description": "Duroplex 18 OZ azul pep 8020",
+                "code": "31LD066",
+                "img" : "/public/images/colores/azulPep.png"
+            },
+            {
+                "title": "Azul Claro",
+                "description": "Duroplex 18 Oz azul claro 6033",
+                "code": "31LD0061",
+                "img": "/public/images/colores/azulClaro.png"
+            },
+            {
+                "title": "Verde Limon",
+                "description": "duroplex 18 Oz verde limon 7015",
+                "code": "31LD0073",
+                "img": "/public/images/colores/verdeLimon.png"
+            },
+            {
+                "title": "Morado",
+                "description": "duroplex 18 OZ morado 5102",
+                "code": "31LD0062",
+                "img": "/public/images/colores/morado.png"
+            },
+            {
+                "title": "Gris plata",
+                "description": "duroplex 18 Oz gris plata 8017",
+                "code": "31LC003",
+                "img": "/public/images/colores/grisPlata.png"
+            },
+            {
+                "title": "Amarillo especial",
+                "description": "aconoplex 18 Oz amarillo especial 364",
+                "code": "31LX0033",
+                "img": "/public/images/colores/amarilloEspecial.png"
+            },
+            {
+                "title": "Verde bosque",
+                "description": "duroplex 18 Oz verde bosque 7028",
+                "code": "31LD075",
+                "img": "/public/images/colores/verdeBosque.png"
+            },
+            {
+                "title": "Blanco brillante",
+                "description": "duroplex 18 Oz blanco Brillante 026 P/Impresión",
+                "code": "31LD0102",
+                "img": "/public/images/colores/blancoBirllante.png"
+            },
+            {
+                "title": "Rojo especial",
+                "description": "econoplex 19 Oz rojo especial 5062",
+                "code": "31LX0057",
+                "img": "/public/images/colores/rojoEspecial.png"
+            },
+            {
+                "title": "vino",
+                "description": "Duroplex 18 Oz vino 5061",
+                "code": "31LD053",
+                "img": "/public/images/colores/vino.png"
+            },
+            {
+                "title": "negro",
+                "description": "duroplex 18 Oz negro 900",
+                "code": "31LD0090",
+                "img": "/public/images/colores/negro.png"
+            },
+            {
+                "title": "beige",
+                "description": "duroplex 18 Oz beige 1018",
+                "code": "31LD0011",
+                "img": "/public/images/colores/beige.png"
+            }
+        ],
+        "mallas": [
+
+        ]
+    },
+    "productos": [
+        {
+            "title": "Mallasombra plana con travesaños",
+            "fullTitle": "Estructura pergolada incluyendo mallasombra plana instalada de manera fija",
+            "description": "Estructura para pergolas incluyendo mallasombra en medidas de 50cm entrelazadas instaladas de manera fija ",
+            "formulasCant": [
+                {
+                    "name": "Cantidad travesaños",
+                    "formula": "redM(la/0.5)+1"
+                },
+                {
+                    "name": "Cantidad postes",
+                    "formula": "redM(((la/6)*2)+((an/6)*2)-4)"
+                },
+                {
+                    "name": "Cantidad tiras",
+                    "formula": "redM(an/anT)"
+                }
+            ],
+            "formulasPrice": [
+                {
+                    "name": "Precio travesaños",
+                    "formula": "an"
+                }
+            ]
+        }
+    ],
+    "materiales": [
+        {
+            "name": "Malla",
+            "short": "ma",
+            "price": 195,
+            "unidad": "metros^2"  
+        },
+        {
+            "name": "Poste",
+            "short": "po",
+            "price": 276.666,
+            "unidad": "metro"
+        },
+        {
+            "name": "Travesaño",
+            "short": "tra",
+            "price": 276.666,
+            "unidad": "metro"
+        },
+        {
+            "name": "Mensula",
+            "short": "men",
+            "price": 260,
+            "unidad": "unidad"
+        },
+        {
+            "name": "Pintura",
+            "short": "pin",
+            "price": 1300,
+            "unidad": "proyecto"
+        },
+        {
+            "name": "Instalación de herrajes",
+            "short": "idh",
+            "price": 3000,
+            "unidad": "proyecto"
+        }
+    ]
+}
