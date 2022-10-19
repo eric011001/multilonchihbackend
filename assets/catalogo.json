@@ -87,29 +87,176 @@
     "productos": [
         {
             "title": "Mallasombra plana con travesaños",
+            "tipo": "malla",
             "fullTitle": "Estructura pergolada incluyendo mallasombra plana instalada de manera fija",
             "description": "Estructura para pergolas incluyendo mallasombra en medidas de 50cm entrelazadas instaladas de manera fija ",
             "formulasCant": [
-                {
-                    "name": "Cantidad travesaños",
-                    "formula": "redM(la/0.5)+1"
-                },
+                
                 {
                     "name": "Cantidad postes",
-                    "formula": "redM(((la/6)*2)+((an/6)*2)-4)"
+                    "formula": "(Math.ceil((( la / 6 ) * 2 ) + (( an / 6 ) * 2 ) - 4 ))",
+                    "short": "capos"
                 },
                 {
                     "name": "Cantidad tiras",
-                    "formula": "redM(an/anT)"
+                    "formula": "(Math.ceil( an / 5 ))",
+                    "short": "catir"
+                },
+                {
+                    "name": "Largo real mallasombra",
+                    "formula": "( 0.05 * catra + la )",
+                    "short": "lm"
+                },
+                {
+                    "name": "Cantidad travesaños",
+                    "formula": "(Math.ceil( la / 0.5 ) + 1 )",
+                    "short": "catra"
                 }
             ],
             "formulasPrice": [
                 {
                     "name": "Precio travesaños",
-                    "formula": "an"
+                    "formula": "( an * tra * catra )",
+                    "short": "pt"
+                },
+                {
+                    "name": "Precio postes",
+                    "formula": "( al * po  * capos )",
+                    "short": "pp"
+                },
+                {
+                    "name": "Precio Malla",
+                    "formula": "(( an * lm * ma )+( catir * 2 * lm * 30 ))",
+                    "short": "pm"
+                },
+                {
+                    "name": "Precio total",
+                    "formula": "( pt + pp + pm + pin + idh )",
+                    "short": "pto"
+                }
+            ]
+        },
+        {
+            "fullTitle": "Mallasombra instalada y tensada con postes cruzados",
+            "tipo": "malla",
+            "description": "Estructura con postes cruzados incluyendo mallasombra instalada y tensada con cable acerado de 3/16 - (Malla sombrada con postes cruzados) ",
+            "title": "Malla sombrada con postes cruzados",
+            "formulasCant": [
+                {
+                    "name": "Cantidad travesaños",
+                    "formula": "(2)",
+                    "short": "catra"
+                },
+                {
+                    "name": "Cantidad postes",
+                    "formula": "(4)",
+                    "short": "capos"
+                }
+            ],
+            "formulasPrice": [
+                {
+                    "name": "Precio postes",
+                    "formula": "( al * po * 6 * capos )",
+                    "short": "pp"
+                },
+                {
+                    "name": "Precio travesaños",
+                    "formula": "( 2 * (Math.sqrt( an ^ 2 + la ^ 2 )) * tra )",
+                    "short": "pt"
+                },
+                {
+                    "name": "Precio Malla",
+                    "formula": "( an * la * ma + 280 )",
+                    "short": "pm"
+                },
+                {
+                    "name": "Precio total",
+                    "formula": "( pp + pt + pm )",
+                    "short": "pt"
+                }
+            ]
+        },
+        {
+            "fullTitle": "Estructura decorativa con mallasombra plana ",
+            "tipo": "malla",
+            "description": "Estructura decorativa con mallasombra plana instalada atornillada perimetralmente",
+            "title": "Mallasombra plana",
+            "formulasCant": [
+                {
+                    "name": "Cantidad travesaños",
+                    "formula": "( la + 1 )",
+                    "short": "catra"
+                },
+                {
+                    "name": "Cantidad postes",
+                    "formula": "( Math.Round((( la / 6 ) * 2 ) + (( an / 6 ) * 2 ) - 4 ))",
+                    "short": "capos"
+                }
+            ],
+            "formulasPrice": [
+                {
+                    "name": "Precio postes",
+                    "formula": "( al * po * 6 * capos )",
+                    "short": "pp"
+                },
+                {
+                    "name": "Precio travesaños",
+                    "formula": "( an * tra * 6 * catra )",
+                    "short": "pt"
+                },
+                {
+                    "name": "Precio Malla",
+                    "formula": "( an * la * ma )",
+                    "short": "pm"
+                },
+                {
+                    "name": "Precio total",
+                    "formula": "( pp + pt + pm )",
+                    "short": "pt"
+                }
+            ]
+        },
+        {
+            "fullTitle": "Estructura decorativa con mallasombra plana ",
+            "tipo": "malla",
+            "description": "Estructura decorativa con mallasombra plana instalada atornillada perimetralmente",
+            "title": "Mallasombra plana",
+            "formulasCant": [
+                {
+                    "name": "Cantidad travesaños",
+                    "formula": "( la + 1 )",
+                    "short": "catra"
+                },
+                {
+                    "name": "Cantidad postes",
+                    "formula": "( Math.Round((( la / 6 ) * 2 ) + (( an / 6 ) * 2 ) - 4 ))",
+                    "short": "capos"
+                }
+            ],
+            "formulasPrice": [
+                {
+                    "name": "Precio postes",
+                    "formula": "( al * po * 6 * capos )",
+                    "short": "pp"
+                },
+                {
+                    "name": "Precio travesaños",
+                    "formula": "( an * tra * 6 * catra )",
+                    "short": "pt"
+                },
+                {
+                    "name": "Precio Malla",
+                    "formula": "( an * la * ma )",
+                    "short": "pm"
+                },
+                {
+                    "name": "Precio total",
+                    "formula": "( pp + pt + pm )",
+                    "short": "pt"
                 }
             ]
         }
+        
     ],
     "materiales": [
         {
@@ -148,5 +295,23 @@
             "price": 3000,
             "unidad": "proyecto"
         }
+    ],
+    "extras": [
+        {
+            "name": "Armellas",
+            "price": 20,
+            "img": "/public/images/productos/armella.png"
+        },
+        {
+            "name": "Argollas abatibles",
+            "price": 30,
+            "img": "/public/images/productos/argollaAbatible.png"
+        },
+        {
+            "name": "anclas ocultas",
+            "price": 57,
+            "img": "/public/images/productos/anclasOcultas.png"
+        }
     ]
 }
+
