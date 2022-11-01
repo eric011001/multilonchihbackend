@@ -6,7 +6,7 @@ router.get('/', async function(req, res, next) {
   const cotizacion = req.body;
   let resultado = await evaluador.calcularPrecio(cotizacion);
 
-  res.send(resultado)
+  res.json(resultado)
 });
 
 module.exports = router;

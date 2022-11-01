@@ -86,7 +86,7 @@
     },
     "productos": [
         {
-            "title": "Mallasombra plana con travesaños",
+            "fulltitle": "Mallasombra plana con travesaños",
             "tipo": "malla",
             "fullTitle": "Estructura pergolada incluyendo mallasombra plana instalada de manera fija",
             "description": "Estructura para pergolas incluyendo mallasombra en medidas de 50cm entrelazadas instaladas de manera fija ",
@@ -94,12 +94,12 @@
                 
                 {
                     "name": "Cantidad postes",
-                    "formula": "(Math.ceil((( la / 6 ) * 2 ) + (( an / 6 ) * 2 ) - 4 ))",
+                    "formula": "(Math.ceil((( la / 6 ) * 2 ) + (( an / 6 ) * 2 )))",
                     "short": "capos"
                 },
                 {
                     "name": "Cantidad tiras",
-                    "formula": "(Math.ceil( an / 5 ))",
+                    "formula": "(Math.ceil( an / 0.5 ))",
                     "short": "catir"
                 },
                 {
@@ -177,7 +177,7 @@
             ]
         },
         {
-            "fullTitle": "Estructura decorativa con mallasombra plana ",
+            "fullTitle": "Estructura decorativa con mallasombra plana",
             "tipo": "malla",
             "description": "Estructura decorativa con mallasombra plana instalada atornillada perimetralmente",
             "title": "Mallasombra plana",
@@ -189,14 +189,14 @@
                 },
                 {
                     "name": "Cantidad postes",
-                    "formula": "( Math.Round((( la / 6 ) * 2 ) + (( an / 6 ) * 2 ) - 4 ))",
+                    "formula": "( Math.round((( la / 6 ) * 2 ) + (( an / 6 ) * 2 ) - 4 ))",
                     "short": "capos"
                 }
             ],
             "formulasPrice": [
                 {
                     "name": "Precio postes",
-                    "formula": "( al * po * 6 * capos )",
+                    "formula": "( po * 6 * capos )",
                     "short": "pp"
                 },
                 {
@@ -217,7 +217,7 @@
             ]
         },
         {
-            "fullTitle": "Estructura decorativa con mallasombra plana ",
+            "fullTitle": "Estructura decorativa con mallasombra planas ",
             "tipo": "malla",
             "description": "Estructura decorativa con mallasombra plana instalada atornillada perimetralmente",
             "title": "Mallasombra plana",
@@ -299,17 +299,16 @@
     "extras": [
         {
             "name": "Armellas",
-            "price": 20,
             "img": "/public/images/productos/armella.png"
         },
         {
             "name": "Argollas abatibles",
-            "price": 30,
+            "price": 25,
             "img": "/public/images/productos/argollaAbatible.png"
         },
         {
             "name": "anclas ocultas",
-            "price": 57,
+            "price": 110,
             "img": "/public/images/productos/anclasOcultas.png"
         }
     ]

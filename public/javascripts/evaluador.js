@@ -7,7 +7,7 @@ const regexAlto = /\bal\b/gmi;
 async function obtenerModeloJSON(modelo){
     let tempObj = {};
     jsonData.productos.forEach(item => {
-        if (item.title == modelo) {
+        if (item.fullTitle == modelo) {
             tempObj = item;
         }
     });
@@ -17,6 +17,7 @@ async function obtenerModeloJSON(modelo){
 
 async function calcularPrecio(ruta) {
     const modelo = await obtenerModeloJSON(ruta.modelo);
+
     let result = analizadorLexico(modelo,ruta);
     let total = Number.parseFloat(new Function(result.total)());
     
@@ -77,21 +78,6 @@ function analizadorLexico(modelo,ruta) {
     stringFinal = stringFinal.replaceAll(dynReg,ruta.largo);
     stringFinal = `const total = ${stringFinal}; return total.toFixed(2);`;
     return {"total": stringFinal, cantidades};
-  /*stringFinal = stringFinal.replaceAll(regexAncho, 'Number.parseInt(rutaVentana.dimensionAncho)');
-  stringFinal = stringFinal.replaceAll(regexAncho2, 'Number.parseInt(rutaVentana.dimensionAncho2)');
-  stringFinal = stringFinal.replaceAll(regexAncho3, 'Number.parseInt(rutaVentana.dimensionAncho3)');
-
-  stringFinal = stringFinal.replaceAll(regexAlto, 'Number.parseInt(rutaVentana.dimensionAlto)');
-  stringFinal = stringFinal.replaceAll(regexAlto2, 'Number.parseInt(rutaVentana.dimensionAlto2)');
-  stringFinal = stringFinal.replaceAll(regexAlto3, 'Number.parseInt(rutaVentana.dimensionAlto3)');
-
-  stringFinal = stringFinal.replaceAll(regexPrecioVidrioBase, `determinarPrecioVidrio(rutaVentana.serie, obtenerSubtipoVentanaParaPrecioVidrio(rutaVentana.serie, rutaVentana.subtipoVentana, 0), rutaVentana.tipoVidrio + " " + rutaVentana.subtipoVidrio)`);
-  stringFinal = stringFinal.replaceAll(regexPrecioVidrio2, `determinarPrecioVidrio(rutaVentana.serie, obtenerSubtipoVentanaParaPrecioVidrio(rutaVentana.serie, rutaVentana.subtipoVentana, 1), rutaVentana.tipoVidrio + " " + rutaVentana.subtipoVidrio)`);
-  stringFinal = stringFinal.replaceAll(regexPrecioVidrio3, `determinarPrecioVidrio(rutaVentana.serie, obtenerSubtipoVentanaParaPrecioVidrio(rutaVentana.serie, rutaVentana.subtipoVentana, 2), rutaVentana.tipoVidrio + " " + rutaVentana.subtipoVidrio)`)
-
-  stringFinal = `const total = ${stringFinal}; return total.toFixed(2);`;
-
-  return stringFinal;*/
 }
 
 
